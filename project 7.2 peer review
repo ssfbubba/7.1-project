@@ -1,0 +1,45 @@
+#import random #module is not used so it should be removed
+#import time #module is not used so it should be removed
+
+def displayIntro():
+    print('''You are in a land full of dragons. In front of you,
+    you see two caves. In one cave, the dragon is friendly
+    and will share his treasure with you. The other dragon
+    is greedy and hungry, and will eat you on sight.''')
+    print()
+
+
+def chooseCave():
+    cave = ''
+    while cave != '1' and cave != '2':
+        print('Which cave will you go into? (1 or 2)')
+        cave = input()
+    
+    #return caves
+    return cave #fixed typo should be cave instead of caves
+
+playAgain = 'yes'
+
+#while playAgain = 'yes' or playAgain = 'y':
+while playAgain == 'yes' or playAgain == 'y': #Use == operator to compare the value because using = means value will be assigned
+    displayIntro()
+    #caveNumber = choosecave()
+    caveNumber = chooseCave() #python is case-sensitive so variable must have correct case
+    #checkCave(caveNumber) #there is no function checkCave
+
+    #assign value to friendlyCave
+    friendlyCave = 1
+
+    #moved code segment inside the loop
+    #if chosenCave == str(friendlyCave):
+    if caveNumber == str(friendlyCave): #fixed condition: chooseCave must be caveNumber since the chooseCave function returned cave value
+        print('Gives you his treasure!')
+    else:
+        #print 'Gobbles you down in one bite!'
+        print('Gobbles you down in one bite!') #print statement should be enclosed in parenthesis
+
+    print('Do you want to play again? (yes or no)')
+    playAgain = input()
+    if playAgain == "no":
+        #print("Thanks for planing")
+        print("Thanks for playing") #fixed typo in print statement
